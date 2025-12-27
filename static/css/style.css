@@ -1,0 +1,137 @@
+  
+h1{
+     font-family: "Montserrat", sans-serif;
+}
+
+.reveal-word{
+    font-family: "Montserrat", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+/* Desktop active underline */
+  .desktop-menu a.active {
+    position: relative;
+    color: white;
+  }
+
+  .desktop-menu a.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 2px;
+    background-color: #FE0000;
+    transition: width 0.3s ease;
+  }
+
+  /* Mobile active color */
+  #mobileMenu a.active {
+    color: #FE0000;
+  }
+  .reveal-word {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+      display: inline-block;
+      margin: 0 6px;
+    }
+    .reveal-word.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+.active {
+  text-decoration: underline;
+  text-decoration-thickness: 1px; /* optional: controls underline thickness */
+  text-underline-offset: 8px; /* correct syntax */
+  color: white; /* if you want the text (and underline) in white */
+}
+.typing-text {
+  overflow: hidden;              /* hide overflowing text */
+  white-space: nowrap;           /* keep text in one line */
+  border-right: 4px solid rgba(255,255,255,0.5); /* blinking cursor */
+  width: 0;                      /* start hidden */
+  animation: typing 3s steps(20, end) forwards, blink 0.75s step-end infinite;
+}
+
+/* typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* blinking cursor effect */
+@keyframes blink {
+  50% { border-color: transparent }
+}
+.reveal-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+.career-image.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.career-text.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+  #top, #bottom {
+    stroke-dasharray: 30, 75.39;
+    transition: all 0.5s ease;
+  }
+
+  #hamburger.active #top, #hamburger.active #bottom,
+  #closeBtn svg.active #top, #closeBtn svg.active #bottom {
+    stroke-dasharray: 75.39;
+    stroke-dashoffset: -60;
+  }
+
+  #middle {
+    transition: opacity 0.5s ease;
+  }
+
+  #hamburger.active #middle,
+  #closeBtn svg.active #middle {
+    opacity: 0;
+  }
+
+  #mobileMenu {
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 75vw;
+    background: rgba(0, 0, 0, 0.97);
+    z-index: 99999 !important;
+    overflow-y: auto;
+  }
+
+  #overlay {
+    position: fixed !important;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(4px);
+    z-index: 99998 !important;
+  }
+
+  #closeBtn svg path {
+    stroke: white;
+  }
